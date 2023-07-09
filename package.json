@@ -1,0 +1,13 @@
+{
+  "name": "streaming-html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon --ext js,css,json,html server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
