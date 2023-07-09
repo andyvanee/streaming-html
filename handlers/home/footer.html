@@ -1,0 +1,34 @@
+<style>
+  .wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0;
+  }
+</style>
+<div class="wrapper">
+  <form id="signup-form" action="/" method="POST">
+    <input type="email" name="email" value="" placeholder="you@example.com" />
+    <button id="signup-button" type="submit">Signup</button>
+  </form>
+</div>
+
+<script>
+  const root = document.querySelector(".footer").shadowRoot;
+  const form = root.querySelector("#signup-form");
+  const button = root.querySelector("#signup-button");
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const entries = [];
+    for (const input of form) {
+      if (input.name && input.value) {
+        entries.push([input.name, input.value]);
+      }
+    }
+    const props = Object.fromEntries(entries);
+    console.log({ props });
+  });
+</script>
