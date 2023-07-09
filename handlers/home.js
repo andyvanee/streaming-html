@@ -29,7 +29,6 @@ const deferredLoad = async (res, selector) => {
     )
     await randomWait()
     res.write(script)
-    console.log(`wrote ${selector}`)
 }
 
 export const home = async (req, res) => {
